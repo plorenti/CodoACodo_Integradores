@@ -1,7 +1,7 @@
 from persona import Persona
 from cuenta import Cuenta
 from cuenta_joven import CuentaJoven
-
+'''
 p = Persona("Pablo",26,"26932629")
 p1=Persona("PAL",33,"123412125")
 c = Cuenta(p,4000)
@@ -14,3 +14,12 @@ cj.retiro(500)
 print(cj._cuenta.persona.mostrar())
 cj._cuenta.persona.nombre = "Juan"
 print(cj._cuenta.persona.mostrar())
+'''
+
+cj = CuentaJoven("Pablo",34,"1234568",5000,23)
+cj.mostrar()
+cj.detalle()
+cj.retirar(1000)
+cj.mostrar()
+
+

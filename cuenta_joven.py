@@ -1,8 +1,8 @@
 from cuenta import Cuenta
 class CuentaJoven(Cuenta):
 
-    def __init__(self,cuenta,bonificacion):
-        self._cuenta=cuenta
+    def __init__(self,nombre, edad, dni, cantidad, bonificacion):
+        Cuenta.__init__(self,nombre,edad,dni,cantidad)
         self._bonifiacion=bonificacion
 
     @property
@@ -15,17 +15,18 @@ class CuentaJoven(Cuenta):
 
     def es_titular_valido(self):
         
-        if self._cuenta.persona.edad < 25:
+        if self.edad < 25:
             return True
         else:
             return False
         
-    def retiro(self,cantidad):
+    def retirar(self,cantidad):
         if self.es_titular_valido():
-             self._cuenta.retirar(cantidad)
+             super().retirar(cantidad)
         else:
             print(f"No es un titular válido para retirar ${cantidad}")
 
-    def mostrar(self):
+    def detalle(self):
         print(f"Cuenta joven")        
         print(f"Bonificacion: {self._bonifiacion}%")
+        
