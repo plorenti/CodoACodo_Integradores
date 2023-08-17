@@ -10,3 +10,7 @@ cj = CuentaJoven(c,25)
 cj.retiro(1000)
 cj.mostrar()
 cj.retiro(500)
+
+print(cj._cuenta.persona.mostrar())
+cj._cuenta.persona.nombre = "Juan"
+print(cj._cuenta.persona.mostrar())
